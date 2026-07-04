@@ -1,79 +1,85 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmet - Software Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome İkonları için -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Ahmet — Computer Engineer & Software Developer. Mobile and web applications.">
+        <title>Ahmet — Software Developer</title>
 
+        <!-- Preconnect for Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
 
+        <!-- FontAwesome Icons -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <main class="container">
-        <!-- Profil Bölümü -->
-        <header class="profile">
-            <div class="avatar">
-                <i class="fa-solid fa-code"></i>
-            </div>
-            <h1>Ahmet</h1>
-            <p class="subtitle">Software Developer</p>
-            <p class="bio">Mobil ve web teknolojileri üzerine yenilikçi, performans odaklı ve kullanıcı dostu uygulamalar geliştiriyorum.</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/ahmetfsyn" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <!-- Varsa Linkedin veya Mail adresini buraya ekleyebilirsin -->
-                <a href="mailto:iletisim@ahmetfsyn.com.tr" title="E-posta"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </header>
-
-        <hr class="divider">
-
-        <!-- Uygulamalar / Projeler Bölümü -->
-        <section class="projects">
-            <h2>Uygulamalarım</h2>
-            <div class="projects-grid">
-                
-                <!-- Kart 1: Aura Focus -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Aura Focus</h3>
-                        <p>Odaklanma becerilerinizi artıran, minimalist ve gelişmiş özelliklere sahip bir asistan uygulaması.</p>
-                        <div class="project-buttons">
-                            <!-- Kendi alt klasörüne yönlendirme -->
-                            <a href="/aura-focus/" class="btn btn-secondary">Web Sitesi</a>
-                            <!-- İleride Play Store linkini buraya yapıştırırsın -->
-                            <a href="#" class="btn btn-primary" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                        </div>
-                    </div>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="container">
+            <!-- Hero Section -->
+            <header class="hero fade-up">
+                <div class="avatar" aria-hidden="true">
+                    <i class="fa-solid fa-code"></i>
                 </div>
+                <h1>Ahmet Sayan</h1>
+                <p class="subtitle">Computer Engineer / Software Developer</p>
+                <p class="bio">I build innovative, performance-focused, and user-friendly mobile and web applications.</p>
 
-                <!-- Gelecekte Yeni Uygulama Eklemek İstersen Bu Bloğu Kopyalayabilirsin -->
-                <!-- 
-                <div class="project-card">
-                    <div class="project-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <div class="project-info">
-                        <h3>Yeni Proje</h3>
-                        <p>Uygulama hakkında kısa bir açıklama buraya gelecek.</p>
-                        <div class="project-buttons">
-                            <a href="#" class="btn btn-primary" target="_blank">İncele</a>
+                <div class="social-links">
+                    <a href="https://github.com/ahmetfsyn" target="_blank"
+                        rel="noopener noreferrer" class="social-link"
+                        aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:iletisim@ahmetfsyn.com.tr"
+                        class="social-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </header>
+
+            <hr class="divider">
+
+            <!-- Projects & Applications Section -->
+            <section class="projects" id="projects">
+                <h2 class="fade-up">My Applications</h2>
+                <div class="projects-grid">
+
+                    <!-- Project Card: Aura Focus -->
+                    <article class="project-card fade-up">
+                        <div class="project-icon">
+                            <i class="fa-solid fa-brain"></i>
                         </div>
-                    </div>
-                </div> 
-                -->
+                        <div class="project-info">
+                            <h3>Aura Focus</h3>
+                            <p>A minimalist assistant app with advanced features designed to boost your focus and productivity.</p>
+                            <div class="project-buttons">
+                                <a href="/aura-focus/"
+                                    class="btn btn-secondary">Website</a>
+                                <a href="#" class="btn btn-primary"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-google-play"></i>
+                                    Google Play
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-            </div>
-        </section>
-    </main>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2026 ahmetfsyn.com.tr. Tüm hakları saklıdır.</p>
-    </footer>
+        <footer class="site-footer">
+            <p>&copy; 2026 ahmetfsyn.com.tr — All rights reserved.</p>
+        </footer>
 
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
