@@ -42,14 +42,35 @@ const translations = {
         "tab-yemekhane": "Yemekhane Menüsü",
         
         "faq-section-title": "Sıkça Sorulan Sorular",
+        "trust-badge": "2+ Üniversitede Aktif",
+        "trust-title": "Akıllı Kampüs Ekosistemi",
+        "trust-sub": "Mersin ve Tarsus kampüslerinde öğrencilerle buluştu. Çok yakında tüm Türkiye'de!",
+        "status-active": "Aktif Kampüs",
+        "status-integrating": "Entegrasyonda",
+
+        "request-badge": "Kampüsünü Ekle",
+        "request-title": "Üniversitende CampuWise Yok mu?",
+        "request-sub": "Kendi üniversitene ve kampüsüne CampuWise'ın gelmesini istiyorsan formu doldur, sıradaki üniversiteyi birlikte belirleyelim!",
+        "form-name-label": "Adınız Soyadınız",
+        "form-univ-label": "Üniversitenizin Adı (Örn: Hacettepe Üniversitesi)",
+        "form-email-label": "E-Posta Adresiniz (Tercihen .edu.tr)",
+        "form-role-label": "Kampüsteki Rolünüz",
+        "role-student": "Öğrenci",
+        "role-president": "Öğrenci Kulübü / Topluluk Başkanı",
+        "role-academic": "Akademisyen / İdari Personel",
+        "role-other": "Diğer",
+        "form-submit-btn": "Kampüs Talebi Gönder",
+
         "footer-privacy": "Gizlilik Politikası",
         "footer-terms": "Kullanım Koşulları",
-        "footer-contact": "İletişim",
+        "footer-kvkk": "KVKK Aydınlatma Metni",
+        "footer-contact": "İletişim & Destek",
+        "footer-support-email": "Destek & İletişim:",
         "footer-rights": "© 2026 CampuWise. Tüm hakları saklıdır.",
 
         "modal-contact-title": "İletişime Geçin",
         "modal-contact-sub": "Sorularınız, iş birliği talepleriniz veya geri bildirimleriniz için bize ulaşın.",
-        "contact-email-label": "E-Posta Adresimiz",
+        "contact-email-label": "Destek E-Posta Adresi",
         "contact-form-name": "Adınız Soyadınız",
         "contact-form-email": "E-Posta Adresiniz",
         "contact-form-message": "Mesajınız",
@@ -57,6 +78,7 @@ const translations = {
 
         "modal-privacy-title": "Gizlilik Politikası",
         "modal-terms-title": "Kullanım Koşulları",
+        "modal-kvkk-title": "KVKK Aydınlatma Metni",
         "close-btn": "Kapat"
     },
     en: {
@@ -101,14 +123,35 @@ const translations = {
         "tab-yemekhane": "Cafeteria Menu",
         
         "faq-section-title": "Frequently Asked Questions",
+        "trust-badge": "Active in 2+ Universities",
+        "trust-title": "Active Campus Ecosystem",
+        "trust-sub": "Live for students across Mersin & Tarsus campuses. Coming soon across Turkey!",
+        "status-active": "Active Campus",
+        "status-integrating": "In Integration",
+
+        "request-badge": "Request Your Campus",
+        "request-title": "Is CampuWise not at your university?",
+        "request-sub": "Want CampuWise to launch at your campus? Submit the quick request form to help us prioritize your university!",
+        "form-name-label": "Your Full Name",
+        "form-univ-label": "University Name (e.g. Hacettepe University)",
+        "form-email-label": "Your Email Address (Preferably .edu.tr)",
+        "form-role-label": "Your Role on Campus",
+        "role-student": "Student",
+        "role-president": "Student Club President / Lead",
+        "role-academic": "Academician / Faculty Staff",
+        "role-other": "Other",
+        "form-submit-btn": "Submit Campus Request",
+
         "footer-privacy": "Privacy Policy",
         "footer-terms": "Terms of Use",
-        "footer-contact": "Contact Us",
+        "footer-kvkk": "KVKK Notice",
+        "footer-contact": "Contact & Support",
+        "footer-support-email": "Support & Inquiries:",
         "footer-rights": "© 2026 CampuWise. All rights reserved.",
 
         "modal-contact-title": "Get in Touch",
         "modal-contact-sub": "Reach out to us for questions, partnership requests, or feedback.",
-        "contact-email-label": "Our Email Address",
+        "contact-email-label": "Support Email Address",
         "contact-form-name": "Your Name",
         "contact-form-email": "Your Email",
         "contact-form-message": "Your Message",
@@ -116,6 +159,7 @@ const translations = {
 
         "modal-privacy-title": "Privacy Policy",
         "modal-terms-title": "Terms of Use",
+        "modal-kvkk-title": "KVKK Clarification Text",
         "close-btn": "Close"
     }
 };
@@ -271,6 +315,124 @@ function switchTab(tabId) {
     });
 }
 
+// Dynamic Legal Documents Registry & Cache
+const legalDocs = {
+    'modal-privacy': { file: './Privacy-Policy.md' },
+    'modal-terms': { file: './Terms&Conditions.md' },
+    'modal-kvkk': { file: './KVKK.md' }
+};
+const legalCache = {};
+
+// Lightweight Markdown-to-HTML Parser for Legal Docs
+function parseLegalMarkdown(md) {
+    let html = md
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    
+    // Headings
+    html = html.replace(/^### (.*$)/gim, '<h4 class="text-base font-bold text-white mt-5 mb-2">$1</h4>');
+    html = html.replace(/^## (.*$)/gim, '<h3 class="text-lg font-bold text-white mt-6 mb-2 pb-1 border-b border-white/10">$1</h3>');
+    html = html.replace(/^# (.*$)/gim, '<h2 class="text-xl font-extrabold text-white mt-2 mb-4 text-brand-cyan">$1</h2>');
+
+    // Bold & Italic
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-white">$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em class="italic text-slate-300">$1</em>');
+
+    // Horizontal Rules
+    html = html.replace(/^---$/gim, '<hr class="my-5 border-white/10">');
+
+    // Links
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-brand-cyan hover:underline font-medium">$1</a>');
+
+    // Lines & Paragraphs Processing
+    const lines = html.split('\n');
+    let inList = false;
+    let listType = 'ul';
+    let result = [];
+    
+    lines.forEach(line => {
+        const trimmed = line.trim();
+        
+        // Unordered list item
+        if (trimmed.startsWith('- ')) {
+            if (!inList || listType !== 'ul') {
+                if (inList) result.push(`</${listType}>`);
+                result.push('<ul class="list-disc pl-5 space-y-1.5 my-3 text-slate-300 text-sm">');
+                inList = true;
+                listType = 'ul';
+            }
+            result.push('<li class="leading-relaxed">' + trimmed.substring(2) + '</li>');
+        } 
+        // Ordered list item
+        else if (/^\d+\.\s+/.test(trimmed)) {
+            const itemText = trimmed.replace(/^\d+\.\s+/, '');
+            if (!inList || listType !== 'ol') {
+                if (inList) result.push(`</${listType}>`);
+                result.push('<ol class="list-decimal pl-5 space-y-1.5 my-3 text-slate-300 text-sm">');
+                inList = true;
+                listType = 'ol';
+            }
+            result.push('<li class="leading-relaxed">' + itemText + '</li>');
+        } 
+        else {
+            if (inList) {
+                result.push(`</${listType}>`);
+                inList = false;
+            }
+            if (trimmed.length > 0 && !trimmed.startsWith('<h') && !trimmed.startsWith('<hr') && !trimmed.startsWith('<ul') && !trimmed.startsWith('<ol')) {
+                result.push('<p class="text-slate-300 text-sm leading-relaxed mb-3">' + trimmed + '</p>');
+            } else if (trimmed.length > 0) {
+                result.push(line);
+            }
+        }
+    });
+    if (inList) result.push(`</${listType}>`);
+
+    return result.join('\n');
+}
+
+// Fetch and Render Dynamic Legal Markdown Document
+async function loadLegalDoc(modalId) {
+    const config = legalDocs[modalId];
+    if (!config) return;
+
+    const contentContainer = document.getElementById(`${modalId}-content`);
+    if (!contentContainer) return;
+
+    if (legalCache[modalId]) {
+        contentContainer.innerHTML = legalCache[modalId];
+        return;
+    }
+
+    contentContainer.innerHTML = `
+        <div class="flex items-center justify-center py-12 gap-3 text-slate-400">
+            <svg class="animate-spin h-5 w-5 text-brand-indigo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span class="text-sm">Güncel yasal doküman yükleniyor...</span>
+        </div>
+    `;
+
+    try {
+        const res = await fetch(config.file);
+        if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+        const markdown = await res.text();
+        const parsedHtml = parseLegalMarkdown(markdown);
+        legalCache[modalId] = parsedHtml;
+        contentContainer.innerHTML = parsedHtml;
+    } catch (err) {
+        console.error(`Failed to load ${config.file}:`, err);
+        contentContainer.innerHTML = `
+            <div class="p-6 text-center text-slate-400">
+                <p class="mb-3 text-red-400">Doküman yüklenirken bir sorun oluştu.</p>
+                <a href="${config.file}" target="_blank" class="text-brand-cyan underline text-sm hover:text-white transition-colors">Dokümanı doğrudan tarayıcıda açmak için tıklayın</a>
+            </div>
+        `;
+    }
+}
+
 // Modal Handlers
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -278,6 +440,11 @@ function openModal(modalId) {
         modal.classList.remove('hidden');
         modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
+
+        // Dynamically load legal documents on demand
+        if (legalDocs[modalId]) {
+            loadLegalDoc(modalId);
+        }
     }
 }
 
@@ -293,9 +460,24 @@ function closeModal(modalId) {
 // Close modals on escape key press
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        ['modal-contact', 'modal-privacy', 'modal-terms'].forEach(id => closeModal(id));
+        ['modal-contact', 'modal-privacy', 'modal-terms', 'modal-kvkk'].forEach(id => closeModal(id));
     }
 });
+
+// Campus Request Form Handler
+function handleCampusRequest(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const university = form.university.value;
+    
+    const msg = currentLang === 'en'
+        ? `Thank you ${name}! Your request for ${university} has been recorded into our priority campus launch list.`
+        : `Teşekkürler ${name}! ${university} için yaptığınız talep öncelikli kampüs listemize kaydedildi.`;
+    
+    alert(msg);
+    form.reset();
+}
 
 // Initialize page on DOM load
 document.addEventListener('DOMContentLoaded', () => {
