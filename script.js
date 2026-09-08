@@ -133,18 +133,18 @@
         if (!grid) return;
 
         var projects = window.PROJECTS;
-        if (!Array.isArray(projects) || projects.length === 0) {
-            grid.innerHTML = '<p class="no-projects">No projects to display at the moment.</p>';
-            return;
+        // If projects registry exists with data, render dynamically
+        if (Array.isArray(projects) && projects.length > 0) {
+            grid.innerHTML = '';
+            projects.forEach(function (project) {
+                var card = createProjectCard(project);
+                grid.appendChild(card);
+            });
         }
-
-        // Clear existing content (e.g. noscript or placeholder)
-        grid.innerHTML = '';
-
-        projects.forEach(function (project) {
-            var card = createProjectCard(project);
-            grid.appendChild(card);
-        });
+        // If no dynamic projects and grid is completely empty, show message
+        else if (grid.children.length === 0) {
+            grid.innerHTML = '<p class="no-projects">No projects to display at the moment.</p>';
+        }
     }
 
     /**
@@ -162,8 +162,8 @@
 
         var observerOptions = {
             root: null,
-            rootMargin: '0px 0px -40px 0px',
-            threshold: 0.1
+            rootMargin: '0px 0px 50px 0px',
+            threshold: 0.05
         };
 
         var observer = new IntersectionObserver(function (entries) {
@@ -176,7 +176,13 @@
         }, observerOptions);
 
         elements.forEach(function (el) {
-            observer.observe(el);
+            var rect = el.getBoundingClientRect();
+            // If already in viewport on load, immediately show
+            if (rect.top < window.innerHeight + 100) {
+                el.classList.add('visible');
+            } else {
+                observer.observe(el);
+            }
         });
     }
 

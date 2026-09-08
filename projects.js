@@ -21,7 +21,7 @@ window.PROJECTS = [
             alt: "CampuWise logo"
         },
         links: {
-            website: "/campuwise/",
+            website: "./campuwise/",
             github: null,
             playStore: "#",
             appStore: "#"
@@ -42,7 +42,7 @@ window.PROJECTS = [
             alt: "Aura Focus logo"
         },
         links: {
-            website: "/aura-focus/",
+            website: "./aura-focus/",
             github: null,
             playStore: "#",
             appStore: null

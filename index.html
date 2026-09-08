@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description"
-            content="Ahmet — Computer Engineer & Software Developer. Mobile and web applications.">
-        <title>Ahmet — Software Developer</title>
+            content="AhmetFSyn — Computer Engineer & Software Developer. Mobile and web applications.">
+        <title>AhmetFSyn — Software Developer</title>
 
         <!-- Preconnect for Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,49 +52,72 @@
             <section class="projects" id="projects">
                 <h2 class="fade-up">My Applications</h2>
                 <div class="projects-grid" id="projects-grid">
-                    <noscript>
-                        <article class="project-card fade-up">
-                            <div class="project-top-row">
-                                <div class="project-icon-wrapper">
-                                    <div class="project-icon">
-                                        <img src="./campuwise/images/logo.svg" alt="CampuWise logo">
-                                    </div>
-                                </div>
-                                <div class="project-meta-badges">
-                                    <span class="badge badge-featured"><i class="fa-solid fa-star"></i> Featured</span>
-                                    <span class="badge badge-status status-live"><span class="status-pulse-dot"></span>Live</span>
-                                    <span class="badge badge-year">2026</span>
+                    <!-- Project Card: CampuWise -->
+                    <article class="project-card fade-up project-featured" id="project-campuwise">
+                        <div class="card-glow-layer"></div>
+                        <div class="project-top-row">
+                            <div class="project-icon-wrapper">
+                                <div class="project-icon">
+                                    <img src="./campuwise/images/logo.svg" alt="CampuWise logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-cube\' aria-hidden=\'true\'></i>';">
                                 </div>
                             </div>
-                            <div class="project-body">
-                                <h3 class="project-title">CampuWise</h3>
-                                <p class="project-desc">CampuWise is your all-in-one campus assistant. It helps you stay updated with your university, announcements, ring schedules, cafeteria menus, and campus events.</p>
+                            <div class="project-meta-badges">
+                                <span class="badge badge-featured"><i class="fa-solid fa-star"></i> Featured</span>
+                                <span class="badge badge-status status-live"><span class="status-pulse-dot"></span>Live</span>
+                                <span class="badge badge-year">2026</span>
                             </div>
-                            <div class="project-actions">
-                                <a href="/campuwise/" class="btn btn-secondary"><i class="fa-solid fa-globe"></i> Website <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i></a>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">CampuWise</h3>
+                            <p class="project-desc">CampuWise is your all-in-one campus assistant. It helps you stay updated with your university, announcements, ring schedules, cafeteria menus, and campus events.</p>
+                            <div class="project-tags-container">
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> React Native</span>
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> Expo</span>
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> Supabase</span>
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> TypeScript</span>
+                                <span class="tag-pill">Mobile App</span>
+                                <span class="tag-pill">Campus</span>
+                                <span class="tag-pill">Education</span>
                             </div>
-                        </article>
-                        <article class="project-card fade-up">
-                            <div class="project-top-row">
-                                <div class="project-icon-wrapper">
-                                    <div class="project-icon">
-                                        <img src="./aura-focus/app-icon.png" alt="Aura Focus logo">
-                                    </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="./campuwise/" class="btn btn-secondary"><i class="fa-solid fa-globe"></i> Website <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i></a>
+                            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                            <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"></i> App Store</a>
+                        </div>
+                    </article>
+
+                    <!-- Project Card: Aura Focus -->
+                    <article class="project-card fade-up" id="project-aura-focus">
+                        <div class="card-glow-layer"></div>
+                        <div class="project-top-row">
+                            <div class="project-icon-wrapper">
+                                <div class="project-icon">
+                                    <img src="./aura-focus/app-icon.png" alt="Aura Focus logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-cube\' aria-hidden=\'true\'></i>';">
                                 </div>
-                                <div class="project-meta-badges">
-                                    <span class="badge badge-status status-live"><span class="status-pulse-dot"></span>Live</span>
-                                    <span class="badge badge-year">2026</span>
-                                </div>
                             </div>
-                            <div class="project-body">
-                                <h3 class="project-title">Aura Focus</h3>
-                                <p class="project-desc">A minimalist assistant app with advanced features designed to boost your focus, time management, and daily productivity.</p>
+                            <div class="project-meta-badges">
+                                <span class="badge badge-status status-live"><span class="status-pulse-dot"></span>Live</span>
+                                <span class="badge badge-year">2026</span>
                             </div>
-                            <div class="project-actions">
-                                <a href="/aura-focus/" class="btn btn-secondary"><i class="fa-solid fa-globe"></i> Website <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i></a>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Aura Focus</h3>
+                            <p class="project-desc">A minimalist assistant app with advanced features designed to boost your focus, time management, and daily productivity.</p>
+                            <div class="project-tags-container">
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> Android</span>
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> Kotlin</span>
+                                <span class="tech-pill"><i class="fa-solid fa-microchip"></i> Jetpack Compose</span>
+                                <span class="tag-pill">Mobile App</span>
+                                <span class="tag-pill">Productivity</span>
+                                <span class="tag-pill">Utility</span>
                             </div>
-                        </article>
-                    </noscript>
+                        </div>
+                        <div class="project-actions">
+                            <a href="./aura-focus/" class="btn btn-secondary"><i class="fa-solid fa-globe"></i> Website <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i></a>
+                            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
