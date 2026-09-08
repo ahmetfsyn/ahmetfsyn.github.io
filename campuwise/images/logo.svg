@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0B10" />
+      <stop offset="100%" stop-color="#12131C" />
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="8" />
+
+  <!-- Ambient Glow Circle -->
+  <circle cx="256" cy="256" r="160" fill="url(#brandGrad)" opacity="0.25" filter="url(#glow)" />
+
+  <!-- Logo Shape: Stylized Graduation Cap & Digital Wave -->
+  <g transform="translate(256, 240) scale(1.1)" filter="url(#glow)">
+    <!-- Top Cap Diamond -->
+    <path d="M 0 -80 L 130 -15 L 0 50 L -130 -15 Z" fill="url(#brandGrad)" />
+    <!-- Cap Rim Highlight -->
+    <path d="M 0 -80 L 130 -15 L 0 50 L -130 -15 Z" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" />
+    
+    <!-- Skull Cap Base -->
+    <path d="M -75 22 Q 0 65 75 22 L 75 60 Q 0 100 -75 60 Z" fill="url(#brandGrad)" opacity="0.9" />
+
+    <!-- Tassel String & Bob -->
+    <path d="M 130 -15 Q 150 20 145 70" fill="none" stroke="#06B6D4" stroke-width="8" stroke-linecap="round" />
+    <circle cx="145" cy="85" r="14" fill="#06B6D4" />
+
+    <!-- Center Pulse Node -->
+    <circle cx="0" cy="-15" r="12" fill="#FFFFFF" />
+  </g>
+</svg>

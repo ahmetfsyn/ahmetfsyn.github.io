@@ -1,0 +1,66 @@
+{
+  "tr": [
+    {
+      "id": 1,
+      "question": "CampuWise tamamen ücretsiz mi?",
+      "answer": "Evet, CampuWise üniversite öğrencileri için %100 ücretsizdir. Tüm duyuru akışları, kampüs shuttle (ring) saatleri, yemekhane menüleri ve akademik takvime ücretsiz erişebilirsiniz."
+    },
+    {
+      "id": 2,
+      "question": "Hangi üniversiteler ve kampüsler destekleniyor?",
+      "answer": "CampuWise ilk aşamada Mersin Üniversitesi ve Tarsus Üniversitesi kampüslerinde aktif olarak hizmet vermektedir. Yakın zamanda Türkiye genelindeki diğer üniversiteler de platforma eklenecektir."
+    },
+    {
+      "id": 3,
+      "question": "Duyurular ve yemekhane menüleri ne sıklıkla güncelleniyor?",
+      "answer": "Otomatik n8n veri akışlarımız sayesinde ÖSYM, TÜBİTAK, GSB, rektörlük ve fakülte duyuruları ile günlük yemekhane menüleri anında sistemimize işlenir."
+    },
+    {
+      "id": 4,
+      "question": "Kampüs Shuttle (Ring) ve Yemekhane modülleri nasıl çalışır?",
+      "answer": "Ring modülünde canlı otobüs sefer saatlerini ve güzergahlarını görebilir, Yemekhane modülünde ise günlük menüleri, kalori değerlerini ve öğrenci fiyatlarını takip edebilirsiniz."
+    },
+    {
+      "id": 5,
+      "question": "iOS (App Store) versiyonu ne zaman yayınlanacak?",
+      "answer": "Android versiyonumuz Google Play Store'da aktiftir. App Store onay sürecindeki iOS versiyonumuz çok yakında Apple kullanıcıları ile buluşacaktır."
+    },
+    {
+      "id": 6,
+      "question": "Veri gizliliği ve güvenliği nasıl sağlanıyor?",
+      "answer": "Verileriniz Supabase altyapısında Row Level Security (RLS) ve endüstri standardı şifreleme ile korunur. Bilgileriniz asla 3. taraf reklamverenlerle paylaşılmaz."
+    }
+  ],
+  "en": [
+    {
+      "id": 1,
+      "question": "Is CampuWise completely free?",
+      "answer": "Yes, CampuWise is 100% free for university students. You have full access to announcement feeds, campus shuttle schedules, cafeteria menus, and academic calendars without any cost."
+    },
+    {
+      "id": 2,
+      "question": "Which universities and campuses are currently supported?",
+      "answer": "CampuWise is currently live in Mersin University and Tarsus University campuses. Additional universities across Turkey will be onboarded soon."
+    },
+    {
+      "id": 3,
+      "question": "How often are announcements and dining hall menus updated?",
+      "answer": "Thanks to automated n8n data pipelines, announcements from ÖSYM, TÜBİTAK, GSB, rectorate, and faculties, along with daily cafeteria menus, are ingested automatically in real-time."
+    },
+    {
+      "id": 4,
+      "question": "How do the Campus Shuttle (Ring) and Dining Hall modules work?",
+      "answer": "The Ring shuttle module displays live bus timetables and route maps, while the Dining Hall module shows daily menus, nutritional info, and student meal prices."
+    },
+    {
+      "id": 5,
+      "question": "When will the iOS (App Store) version be available?",
+      "answer": "Our Android app is live on the Google Play Store. The iOS app is currently in the App Store review process and will be available very soon."
+    },
+    {
+      "id": 6,
+      "question": "How is user data privacy and security handled?",
+      "answer": "Your data is secured on Supabase infrastructure with Row Level Security (RLS) and industry-standard encryption. We never share user data with third-party advertisers."
+    }
+  ]
+}
