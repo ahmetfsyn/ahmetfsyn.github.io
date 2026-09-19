@@ -21,9 +21,9 @@ window.PROJECTS = [
             alt: "CampuWise logo"
         },
         links: {
-            website: "./campuwise/",
+            website: "www.campuwise.tech",
             github: null,
-            playStore: "#",
+            playStore: "https://play.google.com/store/apps/details?id=com.ahmetfsyn.campuwise",
             appStore: "#"
         },
         tags: ["Mobile App", "Campus", "Education"],
